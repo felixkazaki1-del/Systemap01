@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>System Hub</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+
+<header class="topbar">
+<h1>🌸 System Hub</h1>
+
+<div class="toolbar">
+<input id="searchBar" placeholder="Search alters...">
+
+<button onclick="toggleTheme()">🌙 Theme</button>
+<button onclick="openAdd()">➕ Add Alter</button>
+<button onclick="exportData()">💾 Export</button>
+<button onclick="importData()">📂 Import</button>
+</div>
+
+<div class="pkbox">
+<label>PluralKit Token</label>
+<input id="pkToken" placeholder="Paste token">
+<button onclick="savePK()">Save</button>
+<button onclick="syncPK()">Sync</button>
+</div>
+
+</header>
+
+<main id="groupsContainer"></main>
+
+<!-- ALTER PROFILE MODAL -->
+<div id="alterModal" class="modal">
+<div id="modalCard" class="modalCard">
+
+<span class="close" onclick="closeModal()">×</span>
+
+<div class="profileHeader">
+<img id="modalAvatar">
+<h2 id="modalName"></h2>
+</div>
+
+<div id="modalBio"></div>
+
+<div class="stats">
+<div id="modalFront"></div>
+<div id="modalHistory"></div>
+</div>
+
+</div>
+</div>
+
+<!-- ADD ALTER -->
+<div id="addModal" class="modal">
+<div class="modalCard">
+
+<h2>Add Alter</h2>
+
+<input id="nameInput" placeholder="Name">
+
+<textarea id="bioInput" placeholder="Bio (Markdown supported)"></textarea>
+
+<label>Avatar</label>
+<input type="file" id="avatarInput" accept="image/*">
+
+<label>Colour</label>
+<input type="color" id="colorInput">
+
+<input id="groupInput" placeholder="Group">
+
+<input id="subgroupInput" placeholder="Subgroup">
+
+<input id="frontPercent" type="number" placeholder="Front %">
+
+<button onclick="addAlter()">Save</button>
+
+</div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
